@@ -59,10 +59,12 @@ def detect_face(detector, img, align = True):
 			
 			#detected_face = img[top:bottom, left:right]
 			detected_face = img[max(0, top): min(bottom, img.shape[0]), max(0, left): min(right, img.shape[1])]
+			
 
 			if align:
 				img_shape = sp(img, detections[idx])
-				detected_face = dlib.get_face_chip(img, img_shape, size = detected_face.shape[0], padding=0.5)
+				print(img_shape)
+				detected_face = dlib.get_face_chip(img, img_shape, size = detected_face.shape[0], padding=0.65)
 
 			resp.append((detected_face, img_region))
 
