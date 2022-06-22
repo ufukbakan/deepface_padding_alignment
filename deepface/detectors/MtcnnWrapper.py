@@ -21,8 +21,8 @@ def detect_face(face_detector, img, align = True):
 		for detection in detections:
 			x, y, w, h = detection["box"]
 			old_x, old_y = x,y
-			x = 0 if x < 10 else x-10
-			y = 0 if y < 20 else y-20
+			x = 0 if x < 20 else x-20
+			y = 0 if y < 40 else y-40
 			w += (old_x - x)*2
 			h += (old_y - y)*2
 			detected_face = img[int(y):int(y+h), int(x):int(x+w)]
