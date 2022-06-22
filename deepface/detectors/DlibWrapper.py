@@ -57,8 +57,8 @@ def detect_face(detector, img, align = True):
 			left = d.left(); right = d.right()
 			top = d.top(); bottom = d.bottom()
 			face_height = abs(top - bottom)
-			top -= math.floor(face_height)
-			bottom += math.floor(face_height / 3)
+			top -= math.floor(face_height*2)
+			bottom += math.floor(face_height)
 			print("top,bottom",top,bottom)
 			
 			#detected_face = img[top:bottom, left:right]
