@@ -56,14 +56,13 @@ def detect_face(detector, img, align = True):
 		for idx, d in enumerate(detections):
 			left = d.left(); right = d.right()
 			top = d.top(); bottom = d.bottom()
-			face_height = abs(top - bottom)
-			top -= math.floor(face_height*2)
-			bottom += math.floor(face_height)
-			print("top,bottom",top,bottom)
 			
 			#detected_face = img[top:bottom, left:right]
 			detected_face = img[max(0, top): min(bottom, img.shape[0]), max(0, left): min(right, img.shape[1])]
-			
+
+			face_height = abs(top - bottom)
+			top -= math.floor(face_height/2)
+			bottom += math.floor(face_height/4)
 			img_region = [left, top, right - left, bottom - top]
 
 			if align:
