@@ -20,7 +20,7 @@ def detect_face(face_detector, img, align = True):
 
 		for detection in detections:
 			x, y, w, h = detection["box"]
-			detected_face = img[int(y):int(y+h), int(x):int(x+w)]
+			detected_face = img[int(y-20):int(y+h+20), int(x-10):int(x+w+10)]
 			img_region = [x, y, w, h]
 
 			if align:
