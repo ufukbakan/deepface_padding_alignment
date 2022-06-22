@@ -62,7 +62,7 @@ def detect_face(detector, img, align = True):
 
 			if align:
 				img_shape = sp(img, detections[idx])
-				detected_face = dlib.get_face_chip(img, img_shape, size = detected_face.shape[0], 1)
+				detected_face = dlib.get_face_chip(img, img_shape, size = detected_face.shape[0], padding=1)
 
 			resp.append((detected_face, img_region))
 
