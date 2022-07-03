@@ -1,5 +1,7 @@
 # deepface
 
+## MTCNN and DLIB face alignment functions are updated, especially MTCNN alignes faces very similar to FFHQ dataset.
+
 <div align="center">
 
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/deepface?period=total&units=international_system&left_color=grey&right_color=blue&left_text=pypi%20downloads)](https://pepy.tech/project/deepface)
